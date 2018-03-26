@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class UserService {
@@ -14,7 +15,7 @@ export class UserService {
   public total = 0;
   public wrong = 0;
   login(email: string, password: string): Observable<any> {
-    let observe = this.http.get(`http://54.198.14.22:8090/api/login?email=${email}&password=${password}`);
+    let observe = this.http.get(environment.endpoint+`login?email=${email}&password=${password}`);
     observe.subscribe(
         res => {this.loggedUser = res;
         console.log(res);
@@ -22,10 +23,10 @@ export class UserService {
     );
     return observe;
   }
-  
+
 
   register(email: string, password: string, first:string, last: string) {
-    return this.http.get(`http://54.198.14.22:8090/api/register?email=${email}&password=${password}&fname=${first}&lname=${last}`);
+    return this.http.get(environment.endpoint+`register?email=${email}&password=${password}&fname=${first}&lname=${last}`);
   }
 
   correct() {
@@ -58,7 +59,7 @@ export class UserService {
          console.log(this.loggedUser.userId);
          console.log(this.right);
          console.log(this.wrong);
-         this.http.get(`http://54.198.14.22:8090/api/updateUser?userid=${ui}&correctAnswers=${ri}&wrongAnswers=${wr}`).subscribe(
+         this.http.get(environment.endpoint+`updateUser?userid=${ui}&correctAnswers=${ri}&wrongAnswers=${wr}`).subscribe(
          res => {console.log("called update");}
          );
       }

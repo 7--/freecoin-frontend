@@ -10,7 +10,7 @@ export class AppComponent {
 
   ngOnInit(){
     let docWidth = document.documentElement.offsetWidth;
-    
+
     [].forEach.call(
       document.querySelectorAll('*'),
       function(el) {

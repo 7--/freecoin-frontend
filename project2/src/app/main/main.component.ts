@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
              let json = JSON.parse(xml.responseText);
              questions = json;
              index = 0;
-             
+
             }
             xml.open('GET',`http://localhost:8080/Reimbursement/ManServlet?quizid=${sessionStorage.quizId}`,true);
             xml.send();
@@ -37,11 +37,9 @@ export class MainComponent implements OnInit {
   public questions;
   public index = 0;
 
-  //NgStyle 
+  //NgStyle
   questionAnswered(answer: number) {
       //if(this.index == 0) {
-     
-      console.log(this.questions)
       this.question = this.questions[this.index].question;
       this.option1 = this.questions[this.index].option1;
       this.option2 = this.questions[this.index].option2;

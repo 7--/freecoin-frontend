@@ -2,11 +2,12 @@
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class QuestionsService {
-  
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {  }
   public questions;
   public quiz: number = 1;
   public observe: Observable<any>;
@@ -14,13 +15,11 @@ export class QuestionsService {
 
   getQuestions(obj): Observable<any> {
       this.quizComponent=obj;
-      console.log("set")
       return this.observe
-      //this.http.get(`http://54.198.14.22:8090/api/questionslist?quiz=1`);
   }
 
   setQuestions() {
-      this.observe = this.http.get(`http://54.198.14.22:8090/api/questionslist?quiz=${this.quiz}`);
+      this.observe = this.http.get(environment.endpoint+`questionslist?quiz=${this.quiz}`);
   }
 
   setQuiz(quizNo : number) {
@@ -28,8 +27,10 @@ export class QuestionsService {
       this.setQuestions();
       this.quizComponent.update();
       console.log(this.quiz);
+      console.log(environment.envName);
+
   }
-  
+
 }
 
 export class Question {
