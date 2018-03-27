@@ -31,10 +31,6 @@ export class QuestionComponent implements OnInit {
     );
   }
   /*
-  
- 
-
-  
     this.index = 0;
     this.questionAnswered(0);
   }
@@ -55,12 +51,12 @@ export class QuestionComponent implements OnInit {
       res => {
         console.log(res);
         this.questions = res;
-        console.log(this.questions);   
+        console.log(this.questions);
         this.questionAnswered(0);
         }
     );
   }
-  //NgStyle 
+  //NgStyle
   questionAnswered(answer: number) {
       if(answer != 0) {
         if(answer == this.questions[this.index].answer) {

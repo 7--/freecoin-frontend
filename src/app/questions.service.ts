@@ -19,7 +19,7 @@ export class QuestionsService {
   }
 
   setQuestions() {
-      this.observe = this.http.get(environment.endpoint+`questionslist?quiz=${this.quiz}`);
+      this.observe = this.http.get(environment.endpoint+`question?quizid=${this.quiz}`);
   }
 
   setQuiz(quizNo : number) {
