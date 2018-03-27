@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../questions.service';
 import { Router } from '@angular/router';
+import { QuizService } from '../quiz.service';
 
 @Component({
   selector: 'app-select-quiz',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SelectQuizComponent implements OnInit {
 
-  constructor(private questionsService: QuestionsService, private router: Router) { }
+  constructor(private quizService: QuizService, private questionsService: QuestionsService, private router: Router) { }
 
   ngOnInit() {
+    //this.quizService.s
   }
 
   select(id:number){

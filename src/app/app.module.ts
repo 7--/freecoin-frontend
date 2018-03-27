@@ -11,13 +11,14 @@ import { MainComponent } from './main/main.component';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
 import { SelectQuizComponent } from './select-quiz/select-quiz.component';
+import { QuizComponent } from './quiz/quiz.component';
 import { QuestionComponent } from './question/question.component';
 import { QuestionsService } from './questions.service';
 import { LeaderService } from './leader.service';
 import { UserService } from './user.service';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
-
+import { QuizService } from './quiz.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AboutComponent } from './about/about.component';
     SelectQuizComponent,
     QuestionComponent,
     RegisterComponent,
-    AboutComponent
+    AboutComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -42,13 +44,14 @@ import { AboutComponent } from './about/about.component';
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'quizzes', component: SelectQuizComponent},
+      {path: 'quiz', component: QuizComponent},
       {path: 'about', component: AboutComponent}
     ])
   ],
-  providers: [QuestionsService, LeaderService, UserService],
+  providers: [QuestionsService, LeaderService, UserService, QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
 
 }

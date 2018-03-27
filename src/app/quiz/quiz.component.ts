@@ -11,7 +11,7 @@ export class QuizComponent implements OnInit {
   constructor(private questionsService: QuestionsService) { }
 
   ngOnInit() {
-  
+
     this.questions = this.questionsService.getQuestions(this);
     this.questionAnswered(0);
     this.index=0;
@@ -22,7 +22,7 @@ export class QuizComponent implements OnInit {
              let json = JSON.parse(xml.responseText);
              questions = json;
              index = 0;
-             
+
             }
             xml.open('GET',`http://localhost:8080/Reimbursement/ManServlet?quizid=${sessionStorage.quizId}`,true);
             xml.send();
