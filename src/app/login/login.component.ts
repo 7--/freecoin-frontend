@@ -13,10 +13,10 @@ export class LoginComponent implements OnInit {
   email = "";
   password = "";
   ngOnInit() {
-    
+
    //console.log(this.userService.login());
   }
-  
+
   login() {
   this.userService.login(this.email,this.password).subscribe(
         res => {
@@ -33,6 +33,4 @@ export class LoginComponent implements OnInit {
     }
     */
   }
-  
-
 }

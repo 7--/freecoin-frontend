@@ -14,12 +14,7 @@ export class QuestionComponent implements OnInit {
   constructor(private questionsService: QuestionsService,private userService: UserService) { }
   public show = 1;
   ngOnInit() {
-  /*
-    let jsondata = `[{"question":"Arasilly is stupid.Loream Ipsum Fataneums. AWDADWADADAWDAWDWDAWD", "option1":1,"option2":2,"option3":3,"option4":4,"answer":4},{"question":"3+2", "option1":1,"option2":2,"option3":5,"option4":4,"answer":3}]`;
-    this.questions = JSON.parse(jsondata);
-    this.questionsService.getQuestions();
-    */
-    //this.questionGet(this.parse);
+
     this.show = 1;
     this.index = 0;
     this.questionsService.setQuestions();
@@ -30,11 +25,7 @@ export class QuestionComponent implements OnInit {
          }
     );
   }
-  /*
-    this.index = 0;
-    this.questionAnswered(0);
-  }
-  */
+
   public question: string;
   public option1: string;
   public option2: string;
@@ -56,7 +47,7 @@ export class QuestionComponent implements OnInit {
         }
     );
   }
-  //NgStyle
+
   questionAnswered(answer: number) {
       if(answer != 0) {
         if(answer == this.questions[this.index].answer) {
