@@ -7,7 +7,7 @@ import { UserService } from '../user.service'
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(public userService: UserService) { }
 
   ngOnInit() {
   }

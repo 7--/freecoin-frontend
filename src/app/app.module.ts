@@ -48,7 +48,7 @@ import { QuizService } from './quiz.service';
       {path: 'about', component: AboutComponent}
     ])
   ],
-  providers: [QuestionsService, LeaderService, UserService, QuizService],
+  providers: [QuestionsService, LeaderService, UserService, QuizService, QuestionComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

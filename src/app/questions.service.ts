@@ -13,6 +13,7 @@ export class QuestionsService {
   public observe: Observable<any>;
   public quizComponent;
 
+
   getQuestions(obj): Observable<any> {
       this.quizComponent=obj;
       return this.observe
@@ -26,9 +27,9 @@ export class QuestionsService {
       this.quiz = quizNo;
       this.setQuestions();
       this.quizComponent.update();
+
       console.log(this.quiz);
       console.log(environment.envName);
-
   }
 
 }

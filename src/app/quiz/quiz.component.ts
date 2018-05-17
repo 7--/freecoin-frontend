@@ -15,18 +15,7 @@ export class QuizComponent implements OnInit {
     this.questions = this.questionsService.getQuestions(this);
     this.questionAnswered(0);
     this.index=0;
-    /*
-    let xml = new XMLHttpRequest();
-          xml.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-             let json = JSON.parse(xml.responseText);
-             questions = json;
-             index = 0;
 
-            }
-            xml.open('GET',`http://localhost:8080/Reimbursement/ManServlet?quizid=${sessionStorage.quizId}`,true);
-            xml.send();
-            */
   }
 
   public question: string;

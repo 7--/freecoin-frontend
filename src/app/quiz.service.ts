@@ -14,7 +14,7 @@ export class QuizService {
 
     getQuizes(obj) : Observable < any > {
       this.quizComponent = obj;
-      return this.observe
+      return this.observe;
   }
 
   setQuizes() {
